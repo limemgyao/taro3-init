@@ -19,7 +19,7 @@ export default class Index extends Component {
 
   render () {
     return (
-      <View className='index'>哈喽，欢迎来到我的世界</View>
+      <View className='index'>哈喽，欢迎来到我的世界!!!</View>
     )
   }
 }
