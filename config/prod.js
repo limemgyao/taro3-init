@@ -1,3 +1,9 @@
+// eslint-disable-next-line import/no-commonjs
+const path = require('path')
+const pkg = require(path.resolve(__dirname, '../package.json'))
+const { publicPath, bucket: CDNBucket, path: CDNPath } = pkg.cdn || {}
+const PUBLIC_PATH = `${publicPath}${CDNPath}`
+
 module.exports = {
   env: {
     NODE_ENV: '"production"'
@@ -5,14 +11,42 @@ module.exports = {
   defineConstants: {
   },
   mini: {},
-  h5: {
-    /**
-     * 如果h5端编译后体积过大，可以使用webpack-bundle-analyzer插件对打包体积进行分析。
-     * 参考代码如下：
-     * webpackChain (chain) {
-     *   chain.plugin('analyzer')
-     *     .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin, [])
-     * }
-     */
-  }
+  weapp: {},
+  h5: process.env.RELEASE === 'h5'
+    ? {
+      output: {
+        filename: 'js/[name].[hash:8].js',
+        chunkFilename: 'js/[name].[chunkhash:8].js'
+      },
+      miniCssExtractPluginOption: {
+        filename: 'css/[name].[hash:8].css',
+        chunkFilename: 'css/[id].[hash:8].css'
+      },
+      webpackChain (chain) {
+        chain.output
+          .publicPath( PUBLIC_PATH )
+
+        chain.merge({
+          resolve: {
+            alias: {
+              'react$': 'nervjs',
+              'react-dom$': 'nervjs'
+            }
+          },
+          plugin: {
+            'qn-webpack': {
+              plugin: require('qn-webpack'),
+              args: [{
+                accessKey: process.env.CDN_ACCESS_KEY,
+                secretKey: process.env.CDN_SECRET_KEY,
+                bucket: CDNBucket,
+                path: CDNPath,
+                exclude: /(?:manifest\.json|\.map)$/
+              }]
+            }
+          }
+        })
+      }
+    }
+    : {}
 }

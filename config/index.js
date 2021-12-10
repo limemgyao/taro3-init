@@ -1,3 +1,27 @@
+//import path from 'path'
+import chalk from 'chalk'
+import dotenvFlow from 'dotenv-flow'
+
+const BUILD_ENV = process.env.BUILD_ENV
+const TARO_ENV = process.env.TARO_ENV
+
+console.log(chalk.green(`mode: ${BUILD_ENV} `, `TARO_ENV: ${TARO_ENV}`))
+
+console.log('BUILD_ENV',BUILD_ENV)
+console.log('process.env',process.env)
+
+
+dotenvFlow.config({
+  node_env: BUILD_ENV
+})
+
+const {
+  APP_API_BASE_URL
+} = process.env
+
+
+console.info('APP_API_BASE_URL', APP_API_BASE_URL)
+
 const config = {
   projectName: 'project',
   date: '2021-12-8',
