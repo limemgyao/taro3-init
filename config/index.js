@@ -1,26 +1,20 @@
 //import path from 'path'
 import chalk from 'chalk'
 import dotenvFlow from 'dotenv-flow'
+import pkg from '../package.json'
+import { resolveConst, resolveEnvs } from './utils'
 
 const BUILD_ENV = process.env.BUILD_ENV
 const TARO_ENV = process.env.TARO_ENV
 
 console.log(chalk.green(`mode: ${BUILD_ENV} `, `TARO_ENV: ${TARO_ENV}`))
 
-console.log('BUILD_ENV',BUILD_ENV)
-console.log('process.env',process.env)
-
-
 dotenvFlow.config({
   node_env: BUILD_ENV
 })
 
-const {
-  APP_API_BASE_URL
-} = process.env
-
-
-console.info('APP_API_BASE_URL', APP_API_BASE_URL)
+const DIST_PATH = `dist/${TARO_ENV}`
+const APP_ENVS = resolveEnvs()
 
 const config = {
   projectName: 'project',
@@ -34,8 +28,18 @@ const config = {
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: [],
-  defineConstants: {
-  },
+  defineConstants: resolveConst(
+    {
+      APP_NAME: `${pkg.app_name}`,
+      APP_VERSION: `${pkg.version}`,
+      APP_ENV: process.env.NODE_ENV,
+      APP_BASENAME: '',
+      ...APP_ENVS,
+      APP_AUTH_PAGE:
+        TARO_ENV === 'h5' ? APP_ENVS.APP_AUTH_PAGE : '/pages/auth/authorize'
+    },
+    TARO_ENV
+  ),
   copy: {
     patterns: [
     ],
