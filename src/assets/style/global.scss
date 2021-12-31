@@ -1,0 +1,25 @@
+body, view {
+  font-family: $font-family;
+}
+
+::-webkit-scrollbar {
+  display: none !important;
+}
+
+.card-section{
+  border-radius: $item-border-radius;
+  background-color: $color-section-white;
+  padding: $item-padding;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.card-section .section-title{
+  font-size: 34px;
+  line-height: 44px;
+  font-weight: bold;
+  color: #000;
+  padding-bottom: 20px;
+  display: block;
+}

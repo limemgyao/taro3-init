@@ -1,0 +1,150 @@
+/** 重新修改此文件需要重启服务生效！ */
+
+/** 微信原生mod start */
+radio{
+  display: flex;
+  align-items: center;
+}
+
+/** 微信原生mod end */
+
+/** taro-ui mod start*/
+.at-input{
+  margin-left: 0;
+}
+
+.at-button {
+  &--secondary {
+    border: 1PX solid #c1c1c1;
+    color: #fff;
+    background: #c1c1c1;
+  }
+}
+.at-button{
+  height: 74px;
+  line-height: 74px;
+  &--small {
+    height: 42px;
+    line-height: 38px;
+    padding: 0 22px;
+    font-size: 22px;
+    .at-button__text {
+      font-size: 22px;
+    }
+  }
+  &--primary{
+    background: $main-color;
+  }
+  &--disabled{
+    opacity: 1;
+    background: $color-bg-gray;
+    border-color: transparent;
+    color: #fff;
+    .at-button__text{
+      color: #979797;
+    }
+  }
+}
+.at-button.text-btn{
+  border: none;
+  font-size: $font-size-small;
+  color: $text-btn-color;
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: $color-bg-gray;
+  height: 48px;
+  line-height: 48px;
+  display: flex;
+  align-items: center;
+}
+.at-form{
+  background-color: transparent;
+  &::after{
+    content: none;
+  }
+}
+
+.at-divider{
+  .at-divider__content{
+    background-color: $color-bg-gray;
+    font-size: 26px;
+  }
+}
+
+.at-input{
+  .input{
+    .at-input__input{
+      font-size: $font-size;
+    }
+    .at-button--small{
+      font-size: $font-size;
+    }
+  }
+}
+
+.at-list{
+  &::after{
+    content: none;
+  }
+  .at-list__item{
+    padding: 24px 0;
+    &::after{
+      left: 0;
+    }
+    .at-list__item-content{
+      .item-content__info{
+        .item-content__info-title{
+          font-size: 28px;
+          color: #333;
+        }
+      }
+    }
+  }
+}
+.at-list.placeholder{
+  .at-list__item{
+    .at-list__item-content{
+      .item-content__info{
+        .item-content__info-title{
+          font-size: 28px;
+          color: #d0d0d0;
+        }
+      }
+    }
+  }
+}
+
+/** 倒计时样式修改开始 */
+.at-countdown{
+  .at-countdown__item{
+    margin-right: 10px;
+    .at-countdown__time-box, .at-countdown__separator{
+      font-family: $font-family;
+      font-size: 29px;
+      line-height: 41px;
+      font-weight: bold;
+      padding: 0;
+    }
+  }
+  .at-countdown__item:last-child{
+    margin-right: 0;
+  }
+}
+/** 倒计时样式修改结束 */
+
+.at-activity-indicator{
+  justify-content: center;
+}
+
+/** 教育优惠弹框内样式开始 */
+.contain-wg-swip{
+  .wx-swiper-dots.wx-swiper-dots-horizontal{
+    margin-bottom: 20PX;
+  }
+  .wx-swiper-dot{
+    width: 10px;
+    height: 10px;
+    margin-right: 11px;
+  }
+}
+/** 教育优惠弹框内样式结束 */
