@@ -7,7 +7,7 @@ import './index.scss'
 
 export default class Index extends Component {
 
-  componentWillMount() { }
+ /* componentWillMount() { }
 
   componentDidMount() { }
 
@@ -15,11 +15,19 @@ export default class Index extends Component {
 
   componentDidShow() { }
 
-  componentDidHide() { }
+  componentDidHide() { }*/
+  useEffect(){
+    const res = [
+      {
+        code:'1',
+      }
+    ]
+    const receivedArr = res.filter(item => item.code).map(item => ({ ...item, isChecked: true }))
+  }
 
   render() {
     return (
-      <View className='index'>Hi！girl...</View>
+      <View className='index'></View>
     )
   }
 }
