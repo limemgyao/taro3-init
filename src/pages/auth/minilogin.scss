@@ -1,0 +1,19 @@
+.bottom {
+    background-color: #1cb735;
+    color: #fff;
+    border-radius: 50px;
+    margin-bottom: 25px;
+}
+.content{
+    width: 90%;
+    margin: 0 auto;
+    .img {
+        width: 150px;
+        height: 150px;
+        margin: 150px auto 250px auto;
+        display: block;
+    }
+}
+.desc .tip{
+    font-size: 22px;
+}
