@@ -8,6 +8,8 @@ export default {
       root: 'subpages',
       pages: [
         'good/detail/index',
+        'array/index',
+        'hooks/index',
       ]
     }
   ],
