@@ -1,0 +1,143 @@
+.at-modal {
+  &__overlay {
+    background-color: rgba(#000, 0.8);
+  }
+  &__container {
+    width: 86%;
+  }
+  &__header {
+    &:after {
+      border: none !important;
+    }
+  }
+}
+
+.at-form {
+  padding-left: 0;
+  background-color: transparent;
+  &:after {
+    border: none !important;
+  }
+}
+
+// .at-input {
+//   padding: 16px 20px;
+//   margin: 0 0 $edge-size;
+//   position: relative;
+//   // margin-top: 80px;
+//   &:after {
+//     // border: 1px solid #000000;
+//   }
+//   &__title {
+//     font-size: $font-size-small;
+//     position: absolute;
+//     margin-top: -65px;
+//     left: 0;
+//     width: 60%;
+//   }
+//   input {
+//     font-size: $font-size;
+//   }
+// }
+
+.at-button {
+  margin: 0;
+  font-size: $font-size;
+  &--primary {
+    box-shadow: 0 5px 5px rgba(darken($color-brand-primary, 20%), 0.2);
+  }
+  &--normal {
+    border-color: $color-brand-primary;
+  }
+}
+
+.at-nav-bar__title {
+  font-size: $font-size-large;
+}
+
+.at-tab-bar {
+  height: $tabbar-height;
+  &.is-ipx {
+    height: $tabbar-height + $ipx-fix-height;
+  }
+  &__item {
+    color: $color-disabled-text;
+    padding: 0 12px;
+    line-height: 1;
+    &--active {
+      color: $color-brand-primary;
+    }
+  }
+  &__title {
+    font-size: 24px;
+  }
+  .mb-iconfont, .sp-icon {
+    font-size: 44px;
+  }
+}
+
+.at-tabs {
+  &__item-underline {
+    left: 50%;
+    margin-left: -25%;
+    width: 50%;
+    bottom: 10px;
+  }
+}
+
+.at-search-bar {
+  padding: 12px 15px;
+  &__input-cnt {
+    background: #fff;
+    border-radius: 0;
+  }
+  &__action {
+    background-color: $color-search-cancel-bg;
+    color: $color-primary-text;
+  }
+  &::after {
+    border: 1PX solid $color-brand-primary;
+  }
+  &__placeholder-wrap {
+    justify-content: flex-start;
+    padding: 0;
+    .at-icon {
+      font-size: 42px;
+      color: $color-brand-primary;
+    }
+  }
+}
+
+.taro__toast {
+  font-size: $font-size !important;
+  p {
+    font-size: $font-size !important;
+  }
+}
+
+
+.at-list {
+  &__item {
+    &::after {
+      border: 1px solid $color-border-gray;
+    }
+  }
+}
+
+.at-divider {
+  &__content {
+    background: transparent;
+    font-size: 24px;
+    color: $color-subcolor;
+    background: $color-bg-gray;
+  }
+  &__line {
+    display: none;
+  }
+}
+
+.at-action-sheet {
+  &__header {
+    color: $color-title;
+  }
+}

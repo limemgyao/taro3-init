@@ -1,0 +1,31 @@
+.auth {
+  &-container {
+    padding: 70px 40px;
+  }
+  &-sec {
+    margin: 0 0 90px;
+    &__hd {
+      line-height: 36px;
+      font-size: 36px;
+      margin: 0 0 50px;
+      font-weight: bold;
+    }
+    &__ft {
+      color: #999899;
+      font-size: 20px;
+      font-weight: normal;
+    }
+    &-title {
+      display: block;
+      margin: 0 0 20px;
+      line-height: 1;
+      &__sub {
+        font-size: 26px;
+        display: block;
+      }
+    }
+    .at-button--primary {
+      margin:  0 0 15px;
+    }
+  }
+}

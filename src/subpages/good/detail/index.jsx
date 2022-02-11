@@ -1,9 +1,6 @@
 import { Component, useState, useEffect } from 'react'
 import { View, Text } from '@tarojs/components'
 import { AtButton } from 'taro-ui'
-import {TabBar} from '@/components'
-
-import "taro-ui/dist/style/components/button.scss" // 按需引入
 import './index.scss'
 
 export default () => {
@@ -18,9 +15,8 @@ export default () => {
 
   return (
     <View className='index' style='font-size:14px;'>
-      我是
+      商品详情
 
-      <TabBar />
     </View>
   )
 }

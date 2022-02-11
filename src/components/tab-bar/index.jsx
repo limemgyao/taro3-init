@@ -36,7 +36,7 @@ export default class TabBar extends Component {
       })
       list = [
         {title: '首页', iconPrefixClass: 'in-icon', iconType: 'shouye_huaban', url: '/pages/index/index', urlRedirect: true},
-        //{title: '找好物', iconPrefixClass: 'in-icon', iconType: 'zhongcao-01', url: '/pages/recommend/list', urlRedirect: true},
+        {title: '找好物', iconPrefixClass: 'in-icon', iconType: 'zhongcao-01', url: '/pages/recommend/list', urlRedirect: true},
         //{title: '看直播', iconPrefixClass: 'in-icon', iconType: 'kanzhibo_huaban', url: '/pages/live-marketing/room-list', urlRedirect: true},
         /*{ title: '购物车', iconPrefixClass: 'in-icon', iconType: 'gouwuche_huaban', url: '/pages/cart/espier-index', text: this.cartCount || '', max: '99', urlRedirect: true },*/
         {title: '我的', iconPrefixClass: 'in-icon', iconType: 'wode_huaban', url: '/pages/member/index', urlRedirect: true},

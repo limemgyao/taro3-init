@@ -16,12 +16,26 @@ class Spx {
     Taro.setStorageSync(TOKEN_IDENTIFIER, token)
   }
 
-  get (key) {
-    return globalData[key]
+  get(key, forceLocal) {
+    let val = globalData[key]
+    if (forceLocal) {
+      val = Taro.getStorageSync(key)
+    }
+    return val
   }
 
-  set (key, val) {
+  set(key, val, forceLocal) {
     globalData[key] = val
+    if (forceLocal) {
+      Taro.setStorageSync(key, val)
+    }
+  }
+
+  delete(key, forceLocal) {
+    delete globalData[key]
+    if (forceLocal) {
+      Taro.removeStorageSync(key)
+    }
   }
 
   globalData () {
@@ -32,7 +46,5 @@ class Spx {
     }
   }
 }
-
-
 
 export default new Spx()
